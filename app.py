@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import pymysql
+import requests
 import pytz
 
 app = Flask(__name__)
@@ -53,7 +54,22 @@ def check_db_connection():
     except pymysql.Error as e:
         return jsonify(status="Error", message=str(e))
 
-
+@app.route('/weather_data', methods=['POST'])
+def weather_detials():
+    try:
+        # api key from openweathermap website
+        api_key = "150edd73ba28de68a18817e4d62dbbfa"
+        # if api_key is invalid it will be handled(show error automatically)
+        # error msg{"cod": 401,"message": "Invalid API key. Please see https://openweathermap.org/faq#error401 for more info."}
+        data = request.json
+        city = data.get('city')
+        if not city:
+            return jsonify({'error': 'City not provided.'}), 400
+        weather_data = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}")
+        weather = weather_data.json()
+        return jsonify(weather), 200
+    except Exception as e:
+        return jsonify(status="Error", message=str(e))
 
 
 class WeatherData(db.Model):
