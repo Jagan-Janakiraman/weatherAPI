@@ -58,7 +58,7 @@ def check_db_connection():
 def weather_detials():
     try:
         # api key from openweathermap website
-        api_key = "150edd73ba28de68a18817e4d62dbbfa"
+        api_key = "" #your api key inside double quotes
         # if api_key is invalid it will be handled(show error automatically)
         # error msg{"cod": 401,"message": "Invalid API key. Please see https://openweathermap.org/faq#error401 for more info."}
         data = request.json
