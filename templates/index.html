@@ -5,60 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../static/style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <title>Weatheria 🌦️</title>
 </head>
+
 <body>
-    
-    <div class="mx-auto p-4 bg-purple-400 h-screen flex justify-center">
-        <div class="flex flex-wrap">
-            <div class="w-full   px-2">
-                <div class="bg-gray-900 text-white relative min-w-0 break-words rounded-lg overflow-hidden shadow-sm mb-4 w-full bg-white dark:bg-gray-600">
-                    <div class="px-6 py-6 relative">
-                        <div class="flex mb-4 justify-between items-center">
-                            <div>
-                                <h5 class="mb-0 font-medium text-xl">Delhi,IN</h5>
-                                <h6 class="mb-0">April 04 2021</h6><small>Cloudy</small>
-                            </div>
-                            <div class="text-right">
-                                <h3 class="font-bold text-4xl mb-0"><span>39&deg;</span></h3>
-                            </div>
+     <div class="wrapper">
+        <header><i class="bx bx-left-arrow-alt"></i>Weatheria</header>
+        <section class="input-part">
+            <p class="info-txt">Please enter valid city name</p>
+            <input type="text" placeholder="Enter city name" spellcheck="false" required>
+            <div class="seperator"></div>
+            <button> Get by device location</button>
+        </section>
+        <section class="weather-part">
+            <img src="" alt="Weather Icon">
+            <!-- temperature -->
+            <div class="temp"> 
+                <span class="numb">13</span>
+                <span class="deg">°</span>C
+            </div>
+            <div class="weather">Broken Clouds</div>
+            <div class="location">
+                <i class="bx bx-map"></i>
+                <span>Vellore, India<i class="ri-newspaper-line"></i></span>
+            </div>
+            <div class="bottom-details">
+                <div class="column feels"> 
+                    <i class="bx bxs-thermometer"></i>
+                    <div class="details">
+                        <div class="temp"> 
+                            <span class="numb">17</span>
+                            <span class="deg">°</span>C
                         </div>
-                        <div class="block sm:flex justify-between items-center flex-wrap">
-                            <div class="w-full sm:w-1/2">
-                                <div class="flex mb-2 justify-between items-center"><span>Temp</span><small class="px-2 inline-block">39.11&nbsp;&deg;</small></div>
-                            </div>
-                            <div class="w-full sm:w-1/2">
-                                <div class="flex mb-2 justify-between items-center"><span>Feels like</span><small class="px-2 inline-block">33.33&nbsp;&deg;</small></div>
-                            </div>
-                            <div class="w-full sm:w-1/2">
-                                <div class="flex mb-2 justify-between items-center"><span>Temp min</span><small class="px-2 inline-block">24.9&nbsp;&deg;</small></div>
-                            </div>
-                            <div class="w-full sm:w-1/2">
-                                <div class="flex mb-2 justify-between items-center"><span>Temp max</span><small class="px-2 inline-block">39&nbsp;&deg;</small></div>
-                            </div>
-                        </div>
+                        <p>Feels like</p>
                     </div>
-                    <div class="divider table mx-2 text-center bg-transparent whitespace-nowrap"><span class="inline-block px-3"><small>Forecast</small></span></div>
-                    <div class="px-6 py-6 relative">
-                        <div class="text-center justify-between items-center flex" style="flex-flow: initial;">
-                            <div class="text-center mb-0 flex items-center justify-center flex-col"><span class="block my-1">Sun</span><img src="https://i.imgur.com/ffgW9JQ.png" class="block w-8 h-8"><span class="block my-1">38.3&deg;</span></div>
-                            <div class="text-center mb-0 flex items-center justify-center flex-col"><span class="block my-1">Mon</span><img src="https://i.imgur.com/BQbzoKt.png" class="block w-8 h-8"><span class="block my-1">39.9&deg;</span></div>
-                            <div class="text-center mb-0 flex items-center justify-center flex-col"><span class="block my-1">Mon</span><img src="https://i.imgur.com/BQbzoKt.png" class="block w-8 h-8"><span class="block my-1">40.1&deg;</span></div>
-                            <div class="text-center mb-0 flex items-center justify-center flex-col"><span class="block my-1">Mon</span><img src="https://i.imgur.com/ffgW9JQ.png" class="block w-8 h-8"><span class="block my-1">41.5&deg;</span></div>
-                            <div class="text-center mb-0 flex items-center justify-center flex-col"><span class="block my-1">Mon</span><img src="https://i.imgur.com/ffgW9JQ.png" class="block w-8 h-8"><span class="block my-1">40.1&deg;</span></div>
-                            <div class="text-center mb-0 flex items-center justify-center flex-col"><span class="block my-1">Mon</span><img src="https://i.imgur.com/BQbzoKt.png" class="block w-8 h-8"><span class="block my-1">38&deg;</span></div>
+                </div>
+                <div class="column humidity"> 
+                    <i class="bx bxs-droplet-half"></i>
+                    <div class="details">
+                        <div class="temp"> 
+                            <span class="numb">84</span>
+                            <span class="deg">%</span>
                         </div>
+                        <p>Humidity</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+    
+    
     </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
